@@ -1,0 +1,2 @@
+This code tries interpret the information transmitted from the RFID reader module and keeps it in the character array format which is suitable for further processing. Interrupt Service Routine is called whenever the Tag is brought near to the reader causing an interrupt. 
+This routine stores the 12 bytes serially transmitted information, in an array called ‘arr’ which is of size 12 bytes. A counter is used to check whether 12 bytes has arrived or not. If the counter is 12, then it is reset to zero and the content of the array is displayed on the LCD screen.
