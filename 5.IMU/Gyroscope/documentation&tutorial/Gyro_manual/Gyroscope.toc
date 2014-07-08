@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Specifications of L3G4200D Gyroscope: }{3}
+\contentsline {section}{\numberline {3}Pin Connections of L3G4200D:}{4}
+\contentsline {subsection}{\numberline {3.1}Pin Diagram}{4}
+\contentsline {subsection}{\numberline {3.2}Useful Pins in the L3G4200D Gyroscope and its Connections with the Firebird V Robot}{5}
+\contentsline {subsection}{\numberline {3.3}Communication between Firebird V and L3G4200D using I2C Protocol}{6}
+\contentsline {section}{\numberline {4}Procedure to interface IMU to FireBird V}{7}
+\contentsline {subsection}{\numberline {4.1}Procedure to write data into a slave}{7}
+\contentsline {subsection}{\numberline {4.2}Procedure to read data from a slave}{7}
+\contentsline {section}{\numberline {5}Output of the Gyroscope L3G4200D}{8}
+\contentsline {subsection}{\numberline {5.1}Output Displayed on LCD}{8}
+\contentsline {section}{\numberline {6}Applications}{8}
+\contentsline {section}{\numberline {7}Reference}{10}

@@ -1,0 +1,165 @@
+
+
+\documentclass[a4paper,12 pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{refstyle}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=30mm,
+ right=30mm,
+ top=30mm,
+ bottom=30mm,
+ }
+
+
+
+\begin{document}
+\begin{figure}[t]
+\begin{center}
+\includegraphics[]{iitb.png}
+\end{center}
+\end{figure}
+\title{\textbf{Scripts for\\ Interfacing a PIR Sensor with FireBird V Robot}}
+\author{Shantanu Sengupta}
+\date{\today}
+\maketitle
+
+\begin{center}
+\large e-Yantra \\ Summer Internship Program  
+\end{center}
+\vspace{100 in}
+\pagebreak
+\tableofcontents
+\pagebreak
+
+
+Hello friends\\
+Welcome to the video tutorial on FireBird V Robot. This platform is based on ATmega2560 microcontroller which belongs to the AVR architecture based microcontroller family. In this tutorial, we will learn the interfacing of the PIR Sensor with the Firebird V Robot.
+
+This is the agenda for discussion in this tutorial.\\
+The presentation will start with the Introduction of the PIR Sensor, and how does the sensor work.
+After that, we will discuss its Pin Connections and learn how to interface the sensor with the FireBird V Robot.
+Then, we will see how to write the C Code for interfacing it.
+And finally, we will discuss its applications.
+
+\section{Slide 1} 
+What is PIR Sensor??? 
+PIR Stands for Passive infrared. 
+\begin{itemize}
+
+\item  And a Passive Infrared Sensor measures Infrared light radiating from objects in its field of view
+\item  Everything emits some low level radiation and hotter something is, the more radiation is emitted.	
+\item  The pyroelectric sensor is split into halves slots, when a body moves in its field of view, one slot experiences more IR than another, a differential is created, whcih indicates the motion of a human.
+\end{itemize}
+
+\section{Slide 2}
+\textbf{Now we will see the Specifications of a PIR Sensor:}
+\begin{itemize}
+\item PIR Sensor gives a Single bit digital output
+\item it has a Small size and that makes it easy to conceal. Hence it finds its applications in Surveillance and Home Security Systems.
+\item Its Sensitivity is Pre-settable.
+\item And its Size is given by Length 32mm, Width 24mm, Thickness 26mm
+
+\end{itemize}
+
+\section{Slide 3}
+\textbf{We will now discuss the Working of a PIR Sensor:}
+		\begin{itemize}
+
+\item  PIR Sensor has two slots in it
+\item When idle, both slots detect the same amount of IR 
+\item When a warm body like a human or animal passes by, it first intercepts one half of the PIR sensor, which causes a positive differential change between the two halves of the PIR Sensor.
+\item When the warm body leaves the sensing area, the reverse happens, whereby the sensor generates a negative differential change.
+\item These change pulses are what is detected
+\end{itemize}
+
+\section{Slide 4}
+The principle in the previous slide can be explained using this illustration.
+As you can see, there are two slots reading the infrared. As soon as a person passes in front of the PIR Sensor, a HIGH/LOW pulse is generated, which can be seen on the lower right corner.
+
+
+
+
+\section{Slide 5}
+Now we will see the connections of a PIR Sensor.
+There are only 3 pins in the PIR Sensor. These are:\\
+\begin{itemize}
+
+\item \textbf{+V :} This pin of the PIR sensor should be connected to an
+external 5V supply.
+\item \textbf{GND :} This pin of the PIR sensor should be connected to an
+Ground.
+\item \textbf{OUT :} This pin of the PIR sensor is the digital output. This pin
+is to be read by the nicrocontroller to detect the movement and
+decide the appropriate action that should be taken
+\end{itemize}
+
+
+\section{Slide 5}
+This is the Tabular representation of the Pin Connections between the PIR Sensor and Firebird V Robot\\
+
+First is the Ground pin which is connected to the PIN 23 or 24 of the Microcontroller expansion slot. It can be connected to any other Ground\\
+Second is the +V pin which is connected to the PIN 21 or 22 of the Microcontroller expansion slot. It can be connected to any other 5 V Supply.
+And last is the digital output, this can be connected to any other GPIO Ports Pin of the Firebird V Robot.
+
+
+\section{Slide 6}
+Now we will see the jumper settings of the PIR Sensor,
+It has two triggering modes. These modes can be changed according to the jumper positions.
+			\begin{itemize}
+
+\item \textbf{H Retrigger Mode:} Output remains HIGH when sensor is retriggered repeatedly. Output is LOW when idle ie not triggered
+\item \textbf{Normal Mode: }Output goes HIGH then LOW when trig-
+gered. Continuous motion results in repeated HIGH/ LOW
+pulses. Output is LOWwhen idle
+\end{itemize}
+
+\section{Slide 7}
+This is the C Code for interfacing a PIR Sensor with the FireBired Robot and display the output using the Bargraph LEDs.\\
+I've already created a project and written a program for PIR interfacing. Now let us look at the program for PIR interfacing.\\
+To start with, we have a hash-define fcpu 14745600. This is the crystal frequency at which the Robot is operating, so you might define this at the start of the program.\\
+
+Next we have the header files ie. avr io.h, interrupt.h, and delay.h. \\
+We also have a header file lcd.h, that is user defined. This file can be found in the folder named Header files.\\
+
+Let us now study the configuration of the pins. We are going to interface the PIR sensor with the Firebird and display output on the LCD and Bargraph LED according to the output generated.\\
+
+We configure the PORT L as input pin because it reads the output of the PIR Sensor.
+Similiarly we configure the PORT J and PORT C as output for the Bargraph LEDs and the LCD respectively.\\
+We call the functions of port configuration in Port init function.
+Then we define the function initdevices to initialise all the devices.\\
+Now we will look at the main function.
+In the main function, we initialise all the functions that are used for the initialisation.
+Then we have the infinite while loop. In this while loop we continuously read the Value of the PIR Output, and see if the value is HIGH.\\
+If the value is High, then switch on the Bargraph LEDs and display "Human Detected " on the LCD. And if the value is LOW, then switch off the Bargraph LEDs and display "Empty Space" on the LCD. 
+			
+So this was the C Code for interfacing the PIR Sensor with the Firebird V Robot and display the output using Bargraph LEDs and LCD Display.
+
+\section{Slide 10}
+This is the output of the PIR Sensor displayed on the LCD and Bargraph LEDs.
+In the left figure, when there is no human motion detected, the output of the LCD shows Empty Space and the Bargraph LEDs are OFF
+while in the right Figure, when there is human motion detected, the output of the LCD shows Human Detected and the BarGraph LEDs are ON.\\
+
+Now let us see the working video of the PIR Sensor Interfacing with Firebird V Robot.
+
+In this video, you may observe the Bargraph LEDs switch on and Human Detected displayed on the LCD when a hand moves in front of the PIR sensor, and when the hand is removed,  you may see the bargraph leds off and Empty space displayed on the LCD.
+
+\section{Slide 11}
+\textbf{Now let us look at the Applications of a PIR Sensor:}
+\begin{itemize}
+\item \textbf{First are the Human Detection Applications : }\\
+PIR Sensor on detecting a human body generates a HIGH Pulse. This application is useful for automatic doors, security systems, Medical purposes, Surveillance and Civil Applications.
+
+\item \textbf{These sensors can also be used for Thermal Imaging :}\\
+PIR sensors can be used to detect the thermal radiation of the object with great accuracy and precision. This can be used in thermal imaging, which finds its applications in security services such as airport customs control, fire department, industries for detecting heat leakages and in military applications. \textit{ This can also be used in Rescue missions during earthquakes, such that the PIR sensor in drones will detect the presence of humans under the debris, so that appropriate rescue operation can be carried out.}
+
+\item \textbf{They can also be used in Infrared Homing :}\\
+This application takes place in the missile guiding system. The tracking system works with theemitted electromagnetic radiation from the target. Target tracking is connected to heat radiation detection.
+\end{itemize}
+
+\end{document}

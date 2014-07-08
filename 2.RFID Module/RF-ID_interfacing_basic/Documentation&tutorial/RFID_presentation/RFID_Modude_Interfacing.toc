@@ -1,0 +1,13 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{Introduction to RFID Module}{3}{0}{1}
+\beamer@sectionintoc {2}{EM-18 RFID Reader Module}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{EM-18 RFID Reader Module}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Continued...}{11}{0}{2}
+\beamer@sectionintoc {3}{Interfacing RFID Module On FireBird V}{18}{0}{3}
+\beamer@subsectionintoc {3}{1}{Application circuit of RFID Module}{18}{0}{3}
+\beamer@subsectionintoc {3}{2}{Interfacing RFID Module on FireBird V}{19}{0}{3}
+\beamer@sectionintoc {4}{RFID Module Testing}{20}{0}{4}
+\beamer@subsectionintoc {4}{1}{Connecting RFID Module to USB to Serial Converter}{20}{0}{4}
+\beamer@subsectionintoc {4}{2}{Sample output as seen on serial terminal}{22}{0}{4}
+\beamer@subsectionintoc {4}{3}{Sample output on LCD screen}{23}{0}{4}
+\beamer@sectionintoc {5}{C Code}{24}{0}{5}

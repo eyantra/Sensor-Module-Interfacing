@@ -1,0 +1,12 @@
+\BOOKMARK [2][]{Outline0.1}{Introduction to RFID Module}{}% 1
+\BOOKMARK [2][]{Outline0.2}{EM-18 RFID Reader Module}{}% 2
+\BOOKMARK [3][]{Outline0.2.1.6}{EM-18 RFID Reader Module}{Outline0.2}% 3
+\BOOKMARK [3][]{Outline0.2.2.11}{Continued...}{Outline0.2}% 4
+\BOOKMARK [2][]{Outline0.3}{Interfacing RFID Module On FireBird V}{}% 5
+\BOOKMARK [3][]{Outline0.3.1.18}{Application circuit of RFID Module}{Outline0.3}% 6
+\BOOKMARK [3][]{Outline0.3.2.19}{Interfacing RFID Module on FireBird V}{Outline0.3}% 7
+\BOOKMARK [2][]{Outline0.4}{RFID Module Testing}{}% 8
+\BOOKMARK [3][]{Outline0.4.1.20}{Connecting RFID Module to USB to Serial Converter}{Outline0.4}% 9
+\BOOKMARK [3][]{Outline0.4.2.22}{Sample output as seen on serial terminal}{Outline0.4}% 10
+\BOOKMARK [3][]{Outline0.4.3.23}{Sample output on LCD screen}{Outline0.4}% 11
+\BOOKMARK [2][]{Outline0.5}{C Code}{}% 12

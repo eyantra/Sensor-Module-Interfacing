@@ -1,0 +1,98 @@
+
+
+\documentclass[a4paper,12 pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{refstyle}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=25mm,
+ right=25mm,
+ top=25mm,
+ bottom=25mm,
+ }
+
+
+\begin{document}
+\begin{figure}[t]
+\begin{center}
+\includegraphics[]{iitb.png}
+\end{center}
+\end{figure}
+\title{\textbf{Scripts for \\ Interfacing Accelerometer MMA7361with ATmega2560 in Firebird V Robot}}
+\author{Shantanu Sengupta \and Chayatan \and Mukilan}
+\date{\today \\ e-Yantra \\ Summer Internship Program   }
+\maketitle
+
+\pagebreak
+\tableofcontents
+\pagebreak
+
+Hello friends\\
+Welcome to the video tutorial on FireBird V Robot. This platform is based on ATmega2560 microcontroller which belongs to the AVR architecture based microcontroller family. In this tutorial, we will learn the interfacing of an MMA7361 Accelerometer with the Firebird V Robot.
+
+This is the agenda for discussion in this tutorial.\\
+The presentation will start with the Introduction of the Accelerometer, and how does the Accelerometer work.
+After that, we will discuss the Pin Connections of the Accelerometer and learn how to interface the accelerometer with the FireBird V Robot.
+Then, we will see how to write the C Code for interfacing the Accelerometer.
+And finally, we will discuss the applications of accelerometer.
+
+
+\section{Slide 1} 
+
+
+\textbf{What is an accelerometer??}\\
+\ \ As the name indicates this sensor is used to measure acceleration. Acceleration here does not mean rate of change in velocity in a particular axis. This sensor instead provides the ‘g’ force that is acting on the test mass located inside the sensor. The measure of force that each coordinate experiences due to the action of gravity is what the sensor actually measures. 
+	For example, an accelerometer at rest on the surface of the earth will measure an acceleration g= 9.81 m/s2 straight upwards, due to its weight. By contrast, accelerometers in free fall or at rest in outer space will measure zero. The term for the type of acceleration that accelerometers can measure is g-force acceleration.
+
+\section{Slide 2} 
+\textbf{Now we will see how an Accelerometer Works}\\
+Accelerometer consists of a surface micromachined capacitive sensing cell (g-cell).\\
+This consist of a moveable plate in the center of two fixed beams such that its movement depends on the g force acting on the accelerometer.\\
+As the center beam moves with acceleration, the distance between the beams changes and each capacitor's value will change, (C = Aε/D). Where A is the area of the beam, ε is the dielectric constant, and  D is the distance between the beams.
+
+%----------------------------------------------------------------------------------------------------------------
+
+\section{Slide 3} 
+\textbf{Now we will discuss the Pin Connections of MMA7361 Accelerometer}\\
+The Pin Diagram of an Accelerometer can be seen in this picture\\
+Of all the pins shown, only a few pins are used, The  remaining NC Pins indicated are not connected. The pins that are used for interfacing an accelerometer, will be discussed in the later slides.
+
+
+\section{Slide 4} 
+\textbf{This slide explains the useful Pins of MMA7361 Accelerometer}\\
+The various Pins as can be seen are as follows:\\
+Xout\\
+Yout\\
+Zout\\
+These 3 pins are the output pins of the accelerometer, these indicate the g-force acting on the module in the X, Y, Z co-ordinates respectively. These are connected to the ADC channels of the FireBird V Robot.\\
+Next is the Vss pin, which is connected to ground \\
+Then, the Vdd pin, which is connected to 3.3V\\
+The Sleep pin is used for applications in battery operating applications. When active, it provides significant reduction of operating current.\\
+Then the 0g-detect is used to detect free fall.\\
+The g-select pin gives us the option of working in either of the two modes 0g or 1g, and each of these modes have different sensitivities 800mv/g and 200mv/g. When left unconnected, it operates with a sensitivity of 800mv/g.\\
+And finally, the Self Test pin is used to verify the mechanical and electrical integrity of the accelerometer\\
+
+\section{Slide 5} 
+\textbf{C Code}\\
+This is a program in which the program tracks the xyz coordinates of accelerometer and accordingly sets the threshold values, and decides whether the accelerometer is being tilted left, right, forward or backward and displays the same on the LCD screen. Ensure that you include all the header files the avr.io header, interrupt.h header file, delay.h header file, math.h header file, lcd.h header file and we declare a function called adc conversion and we declare some of the variables for left, right, back, forward flags and the xyz values and these are used as variables. We write a function for configuring the io ports of the lcd, configuring the register values of lcd screen and configuring the adc pins and we also initialize a few default values for adc registers. A detailed description of all the configuration of adc registers is discussed in other video tutorials. Now I’ll explaining the necessary functions for the adc to be interfaced to Firebird V. Since the accelerometer is giving the xyz values in the analog form. We use the adc conversion and we are using 3 channels and the corresponding channel number is given to the adc conversion function. And soon after the conversion I am polling the adc device once the value in the adc register is filled ie when the analog value is converted to digital and the register is filled with the data, the data is copied to variable a and the variable a is written to the main function. The acc function is user defined function which is used to collect the xyz values of the various channels. X coordinate is given to the 14 channel, y is given to the 15 channel, z is connect to the 11th channel and every channel the data is collected and copied to the variables x y z. and it is also displayed on the lcd screen, in various places of the LCD screen like in 1st row 1st column, the x value is printed, 1st row 7th column y value is printed, 2nd row 1 column z value is printed. 
+And this is a small user defined function for initialing all the lcd and adc pin configurations. And acc process is a user def function where once the xyz values are obtained, this is compared with a particular threshold, these values are found by trial and error and by looking at the lcd screen the various xyz values in different orientations these values are collected and ensure you get the same analog values for any other sensor.\\
+Then only these values will be preferable to use, and once the xyz values are compared a particular flag, a right flag, or left, or back, or forward or steady state conditions are set i.e. these values are set based on the conditions met and if that particular flag is high. If suppose the r flag is high so we display the string right on the lcd screen and this continues for all the flags, for left, for back, for forward and for steady state. This the main function which is used for interfacing the accelerometer, acc is the function as explained before, it is used to extract the adc values of xyz coordinates. acc process is user defined function which compares the obtained values of x,y z and compares it with the threshold values and raises the necessary flag and based on flag updates. And action is taken place. Here we are displaying the strings called right, left, back or forward on the lcd screen. And soon after this is done we reset the flags to zero i.e. all the flags are l,f,b,r,s and all the variables are reset to 0 and this process iterates infinitely.
+
+\section{Slide 6} 
+\textbf{Now we will see the Applications of Accelerometer}\\
+Can be used for simulating driver training, in which a steering wheel including an accelerometer will turn the vehicle on the screen according to the tilt provided. This would enable safe driving practice with any dangers of collision.\\
+It can be used For orientation aspects of Robot Movement similar to the walking support system as can be seen in the picture in the right\\
+Accelerometers that measure dynamic forces such as vibrations can be used for designing Virtual Keyboards for phones or computers by requiring the accelerometer to be placed at some specific point on a paper, and the vibrations by the striking of the keys can be detected and the keys striked can be identified according to their distance from the accelerometer.
+
+\section{Slide 7} 
+\textbf{Video Output of Accelerometer}\\
+As u can see in the video the FireBird V robot moves according  to the orientation of the accelerometer. We are controlling the robot at two different speeds in every direction i.e. slow forward, fast forward, slow back, fast back,  slow left, fast left,slow right, fast right.
+The slow or fast movement depends on the degree by which the accelerometer is tilted, if tilted by a higher angle faster would be the movement and if titlted by a small angle slow would be the movement.
+
+
+\end{document}

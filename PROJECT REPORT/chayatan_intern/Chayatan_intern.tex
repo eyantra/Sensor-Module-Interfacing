@@ -1,0 +1,114 @@
+\documentclass[a4paper,12 pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{refstyle}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+
+
+
+\begin{document}
+\begin{figure}[t]
+\begin{center}
+\includegraphics[]{iitb.png}
+\end{center}
+\end{figure}
+\title{\textbf{Project Report Status}}
+\author{Chayatan}
+\date{\today \\ e-Yantra \\ Summer Internship Program   }
+\maketitle
+\pagebreak
+
+\begin{center}
+\textbf{\large Personal Details}
+\end{center}
+\hspace{-1mm}
+\vspace{5mm}\textbf{Name: } \ \ Chayatan\\ 
+\vspace{5mm}\textbf{Email Id: } \ \ chetu369@gmail.com\\
+\vspace{5mm}\textbf{Mobile Number: } \ \ +918861545820\\
+\vspace{5mm}\textbf{Duration of the internship: } \ \ 04 June 2014 to 10 July 2014\\
+\vspace{5mm}\textbf{Summary of your contribution to the project: }\\
+The project assigned to us was Sensor Module Interfacing. My contributions to the project are as follows:
+\begin{itemize}
+\item RFID\_reader\_Module\_Interfaceing:\\
+
+I understood the working of the EM-18 reader\\
+I configured the USART of the microntroller to recieve the data serially, and hence wrote the necessary C code for its interfacing.\\
+I also made the header file for further applications.\\
+
+\item Ultrasonic\_Range\_sensor:\\
+
+I understood the working the ultrasonic sensor,\\
+I wrote the C code to interface the sensor with firebird V based on certain calculations, I could display the Distance in cm\\
+I also made the header file for the same.\\
+
+\item Accelerometer\_Interfacing:\\
+
+This was an interesting sensor which we interfaced. I could read the analog values from the sensor, converted them to digital form and obtained the thresholds. Using these thresholds, I could write the C code for the application code.
+As it always is, I also made the header file.\\
+
+\item IMU\_sensor:\\
+Initially, the sensor(I2C protocol enabled device) gave problems.  i.e., we could not read the values correctly. On studying the sensor deeply, I am now able to interface the sensor succesfull, Now I am trying to display the realtime coordinate values on a graph using scilab software.\\
+
+
+\end{itemize}
+\vspace{5mm}
+
+%-------------------------------------------------------------------------------------------------------------------
+\begin{center}
+\textbf{\large Project Status Report}
+\end{center}
+ 
+\textbf{Objective of the work: }\\Initially I was interviewed about my strengths and weaknesses. I was assigned to interface various sensor modules which are very essential for any robot to handle the realtime situations.\\ As I was good in coding and analyzing the sensors, I was alloted this task. and I hope I turn out to be successful
+   \\
+ 
+\textbf{Scope of the work: }\\In the Sensor Module Interfacing Project, I was supposed to interface various sensors such as,
+\begin{itemize}
+\item RFID reader Module,
+\item Ultrasonic range sensor
+\item Accelerometer
+\item IMU(inertial measurement unit)
+\end{itemize}
+for all the above sensors I was supposed to build a necessary circuit, Interface it to the firebird V robot, build a C code, make a headerfile. Most importantly I was supposed to build a small application for all the above sensors\\ 
+
+ 
+\textbf{Completion: }\\ The following are the tasks completed by me.
+\begin{itemize}
+\item RFID reader Module,
+\item Ultrasonic range sensor
+\item Accelerometer
+\item IMU(inertial measurement unit)
+\end{itemize}
+for all the above mentioned tasks, I have successfully interfaced it with a necessary C code and header files.
+I have also built a small application for all the above sensors.
+ 
+\textbf{Results and Discussion:}\\ 
+
+Our main aim was to equip the FireBird V robot with rich sensors which are informative such as RFID sensor for reading RFID tags, Ultrasonic sensor for measuring accurate distances, accelerometer for measuring the orientation, IMU for measuring angular velocity.
+
+Logic was to understand various sensors currently available in the market. Also understand various formats in which the data can be received and presented.\\
+
+Regarding the accomplishment of work, I was successful in completing the tasks well within the given span of time.\\
+
+All the sensors were well known to me but I had never interfaced before. So, firstly I had to understand the Sensor deeply with respect to its input and output formats, processing the data and finally building an application out of it. \\
+
+It was a great experience.\\
+
+When ever I found it difficult to understand the datasheet I just googled and saw few videos which helped me to go ahead with the basic knowledge.
+\\
+ 
+\textbf{Features \& Bugs: }\\
+while Interfacing the Accelerometer, we actually calculated the Threshold values by trial and error method. So this might cause problems if u follow the same procedure for any other sensor.
+A table is shown in the manual if the same matches to the other sensor also then It will work fine.\\
+while interfacing the IMU sensor, we found that, the Accelerometer in it is not working. we were not able to address the slave. The Gyroscope slave is working fine.
+ \\
+ 
+\textbf{Future Work: }\\We can explore more number sensor and equip the FireBird V robot with all of these and make it super fine robot\\
+ 
+\textbf{References: }\\references,documents \\
+
+
+
+
+
+\end{document}

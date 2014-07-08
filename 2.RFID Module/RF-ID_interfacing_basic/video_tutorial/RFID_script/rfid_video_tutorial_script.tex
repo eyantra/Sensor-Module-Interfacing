@@ -1,0 +1,129 @@
+\documentclass[a4paper,29.6pt]{article}
+\usepackage{graphicx}
+
+\title {Script\\Sensor Module Interfacing \\[10pt] Task: RFID Module Interfacing \\[25pt] Team members }
+\author {Chayatan \and Mukilan A \and Shanthanu Senguptha}
+
+\begin{document}
+\maketitle
+\begin{center}
+\begin{large}
+Under the guidance of\\
+\textbf{Prof. Kavi Arya\\and\\Parin Chedda}\\
+\vspace{0.5in}
+\end{large}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.32]{iitblogo.pdf}
+\end{center}
+\begin{center}
+\begin{large}
+Embedded and Real-Time Systems Laboratory \\
+Department of Computer Science and Engineering \\
+Indian Institute of Technology \\
+Bombay \\
+\end{large}
+\end{center}
+
+
+
+
+\newpage
+\section{Slide1: Introduction}
+\begin{small}
+Hello everyone, this is a video tutorial on interfacing RFID reader Module on FireBird V robot.\\\\
+
+\end{small}
+
+\section{Slide2: Agenda for Discussion}
+\begin{small}
+
+We will be discussing on what exactly is RFID, the need for RFID  and its recent applications.
+We will also be discussing on the working principle of RFID.\\
+Most importantly let us learn how to interface RFID to FBV by looking into its pin and Circuit diagram.\\
+Let us also see how the output of the RFID module can be seen on the Serial Terminal. And its necessary requirements.\\
+Finally, lets see the basic interfacing c code for ATmega2560 and a small video at the end demonstrating a small application using RFID midule.
+
+\end{small}
+
+\section{Slide3: What is RFID??}
+\begin{small}
+First of all let us ask ourselves what is an RFID??
+RFID means, Radio Frequency  Identification.\\ It is a module which transfers the data to the microcontroller which is wirelessly read from a passive RFID Tag.\\
+This feature helps in identifying various real world objects.\\
+One feature that distinguishes RFID with a bar code is, these tags are available as active or passive tags. The active tags have a small memory embedded in them and hence data can be both read and written to it as well.
+
+\end{small}
+
+\section{Slide4: Features of EM-18 reader}
+\begin{small}
+Let us see some of the features of EM-18 RFID reader module.
+\begin{itemize}
+\item EM-18 operates on $+5V$ power supply. 
+\item Read frequency of the EM-18 reader is 125kHz
+\item Maximum read range is 10 cm
+\item The serial transmission rate is 9600bps, TTL and RS232 output
+\end{itemize}
+
+\end{small}
+
+
+
+
+\section{Slide5: Pin Details}
+\begin{small}
+Now let us look into the Pin details of EM-18 RFID reader module
+\begin{itemize}
+\item Pin 1 and 2: These are supply and ground pins
+\item Pin 3: The Beep pin is the output pin which provides series of pulses which could be connected to an led or a buzzer for the read indication
+\item Pin 4 and 5: These two are antenna pins which are left unconnected.
+\item Pin 6: SEL Pin is pulled high to get RS232 output. If the Pin is held low then data is received from DO and D1 pins.
+\item Pin 7: The serial output is taken from this pin in RS232 format
+\item Pin 8 and 9: These Data signal Pins used to output the data in 26 bit Wiegand format
+\end{itemize}
+\end{small}
+
+
+\section{Slide6: USB to Serial Converter}
+\begin{small}
+Now that we are sure of our connections we can check the output in two ways..\\\\
+1.	 Using the Serial Terminal Software with the help of USB to Serial converter\\
+2.	Writing the C code and checking the output on the LCD screen.\\\\
+
+Now lets see how to see output on Serial Terminal.\\ Follow these steps to achieve the task\\
+\begin{itemize}
+\item	The first figure shows the USB to Serial converter
+\item	The second figure shows the connections to be made for serial transmission
+\item	Connect the common ground - pin of the converter
+\item	VCC Pin of the Converter need not be connected
+\item	The RS232 output pin is connected to RX pin of the Converter
+\end{itemize}
+
+\end{small}
+
+\section{Slide7: Serial Terminal}
+\begin{small}
+To see the output on the Serial Terminal,
+\begin{itemize}
+\item	Open the serial terminal software
+\item	Set the COM port for the device
+\item	Set the baud rate to 9600
+\item	Set the number of start bits, stop bits and \item parity bits
+\item	Change the Data mode to Text
+\end{itemize}
+
+\end{small}
+
+
+\section{Slide8: Output on LCD Screen}
+\begin{small}
+This slide shows the Sample output as seen on the LCD screen of the FireBird V robot.\\
+Here the module is displaying the Read Tag on the Second line of the LCD Display.\\
+
+\end{small}
+
+\section{Slide9: The C code}
+\begin{small}
+Now let us see the necessary C Code for the RFID module to function.
+\end{small}
+\end{document}

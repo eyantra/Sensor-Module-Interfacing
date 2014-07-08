@@ -1,0 +1,125 @@
+-i\documentclass[a4paper,12 pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{refstyle}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+
+
+
+\begin{document}
+\begin{figure}[t]
+\begin{center}
+\includegraphics[]{iitb.png}
+\end{center}
+\end{figure}
+\title{\textbf{Project Report Status}}
+\author{Mukilan A}
+\date{\today \\ e-Yantra \\ Summer Internship Program   }
+\maketitle
+\pagebreak
+
+\begin{center}
+\textbf{\large Personal Details}
+\end{center}
+\hspace{-1mm}
+\vspace{5mm}\textbf{Name: } \ \ Mukilan A\\ 
+\vspace{5mm}\textbf{Email Id: } \ \ mukilan.ayyapparaj@gmail.com\\
+\vspace{5mm}\textbf{Mobile Number: } \ \ +919944266611\\
+\vspace{5mm}\textbf{Duration of the internship: } \ \ 04 June 2014 to 10 July 2014\\
+\vspace{5mm}\textbf{Summary of your contribution to the project: }\\
+The project assigned to us was Sensor Module Interfacing. My contributions to the project are as follows:
+\begin{itemize}
+\item RFID reader module interfaceing:\\
+
+I studied the datasheet thoroughly to learn how the RFID module worked. That helped me to contribute in designing the interfacing circuit.\\
+One of my another reasonable contributions was the development of algorithm for RFID module interfacing.\\
+I helped my partner program the robot with my knowledge of the hardware and software components of the robot.
+\item Ultrasonic range sensor:\\
+
+Again I read the datasheet which helped me design the Ultrasonic sensor.\\
+I came up with the calibration technique to print the distance measured in centimeters which helped my partner to program the robot.\\
+I played my part in tracing the beam pattern of the sensor. It was initially difficult to carry out.\\
+I did the documentation work for this sensor.\\
+
+\item Accelerometer Interfacing:\\
+
+I learned a lot while working with this sensor. I played my part in developing the algorithm for interfacing the accelerometer.\\
+I played my part in calibrating the sensor for our motion control application. I learned a lot from that experience.\\
+I played my part in programing the motion control application.\\
+
+\item IMU sensor:\\
+IMU was one tough sensor as we spent most of the time in studying the $I^2C$ protocol for communication.\\
+I played my part in studying the communication protocol thoroughly and we were at last successful in establishing the communication between the sensor and the robot.\\
+Now we are able to receive the value and plot it on Scilab.\\
+
+
+
+\end{itemize}
+\vspace{5mm}
+
+%-------------------------------------------------------------------------------------------------------------------
+\begin{center}
+\textbf{\large Project Status Report}
+\end{center}
+ 
+\textbf{Objective of the work: }\\The project I was allotted was the Sensor Module Interfacing with Fire Bird V robot. When I was interviewed asking for my likes and preferences I told either of the mechanical projects would interest me. But I was given sensor module interfacing. That helped in a way to learn many concepts over a period of four weeks. \\\\\
+ 
+\textbf{Scope of the work: }\\We were supposed to interface the following sensors with Fire Bird V. 
+\item RFID reader Module,
+\item Ultrasonic range sensor
+\item Accelerometer
+\item IMU(inertial measurement unit)
+\end{itemize}
+We had to build the interfacing circuitry, calibrate the sensors, write an interfacing C code, make an header file for application and document all the work. \\ 
+
+ 
+ \begin{enumerate}
+				 
+				\item  \textbf{Ultrasonic sensor module} interfacing.
+				\begin{enumerate}
+				 
+				\item  The ultrasonic sensor module was successfully interfaced with Fire Bird V robot and an object detection and ranging application was built over it successfully.
+				\item  The beam pattern was successfully traced and it was noted that the beam pattern traced matched with the values given in the data sheet.
+				
+				\end{enumerate}
+				\item  \textbf{RFID module} interfacing.
+				\begin{enumerate}
+				\item  EM-18 RFID module was successfully interfaced in the Fire Bird V robot and a tag validation application was successfully built over it.
+				\end{enumerate}
+				\item  \textbf{Accelerometer module} interfacing.
+				\begin{enumerate}
+				\item The MMA 7361 module was successfully interfaced with ATMEGA 2560 in Fire Bird V. 
+				\item  Motion control of Fire Bird V was accomplished by moving the accelerometer.
+				\end{enumerate}
+				\item \textbf{PIR sensor module} interfacing
+				\begin{enumerate}
+				\item  The PIR sensor module was successfully interfaced and Human detection application was built over it.
+				\end{enumerate}
+				\item \textbf{IMU} interfacing.
+				\begin{enumerate}
+				\item  Successfully interfaced the gyroscope with Fire Bird V. It took us tad too long to get to know about the $I^2C$ bus.\\\\ 
+				\end{enumerate}
+	\end{enumerate}
+\textbf{Results and Discussion:}\\ 
+
+We successfully interfaced all the sensors in the scope of our project. The only problem we faced was that the accelerometer of the IMU did not respond to any of our commands. First we thought that the coding was faulty. But later even after giving the correct address we were not able to access it. Then we decided that the accelerometer was not working. We were able to access the gyroscope part of the IMU. Another problem we faced was that the gyroscope values were continuously changing even when it was kept stationary due to the improper insulation with the outer magnetic fields. So we were not able to calibrate it properly.  \\\\
+ 
+\textbf{Features \& Bugs: }\\
+Accelerometer was calibrated manually. The values in our code might change depending on the application we are going to use it.\\
+The RFID tag must be scanned only one at a time. Otherwise it will throw some erroneous value.\\\\
+ 
+\textbf{Future Work: }\\Future work will be to build a dependable method to calibrate the IMU. A GUI to interface and check for the three values given by IMU will be definitely useful. There are only a few in the market and that too from those who make RC helicopters, planes and the likes. So an open source GUI will be useful.\\\\ 
+ 
+\textbf{References: }\\
+\begin{enumerate}
+				\item Hardware and software manual of Fire Bird V.
+				\item ATMEGA 2560 data sheet.
+				\item Data sheets of all the sensors we were provided with.
+				\item www.avrfreaks.net - discussion forum where we came across a lot of problems which were already solved by them. 
+\end{enumerate}
+
+
+
+
+\end{document}

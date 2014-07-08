@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}RFID Reader}{4}
+\contentsline {subsection}{\numberline {1.2}RFID Tags}{4}
+\contentsline {subsubsection}{\numberline {1.2.1}Passive Tags}{4}
+\contentsline {section}{\numberline {2}Working of RFID Module}{5}
+\contentsline {subsection}{\numberline {2.1}Features of RFID Reader EM-18}{5}
+\contentsline {section}{\numberline {3}Circuit Connection Details}{6}
+\contentsline {section}{\numberline {4} Serial Terminal }{7}
+\contentsline {section}{\numberline {5}The C code highlights}{8}
+\contentsline {section}{\numberline {6}Header file function details}{8}
+\contentsline {section}{\numberline {7}Sample code using header file}{9}
+\contentsline {section}{\numberline {8}Sample output on LCD screen}{10}
+\contentsline {section}{\numberline {9}Application program}{10}
+\contentsline {section}{\numberline {10}RFID Applications}{10}

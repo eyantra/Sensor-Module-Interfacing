@@ -1,0 +1,15 @@
+Accelerometer:
+https://docs.google.com/file/d/0B6mXUgc93kyKX254amk2Vkh0Z3M/edit 
+https://drive.google.com/#folders/0B6mXUgc93kyKMHlqbDg1TDhYd0E
+
+RFID:
+https://docs.google.com/file/d/0B6mXUgc93kyKb1VQVHV0MlpBVGc/edit
+https://drive.google.com/#folders/0B6mXUgc93kyKY2tJX0N6TEhFTVk
+
+Ultrasonic:
+https://docs.google.com/file/d/0B6mXUgc93kyKc3lSbTBVT0VFcDg/edit
+https://drive.google.com/#folders/0B6mXUgc93kyKemRNZUE0WXM4Zkk
+
+PIR:
+https://docs.google.com/file/d/0B6mXUgc93kyKbjc1R1JCQm1SMFE/edit
+https://drive.google.com/#folders/0B6mXUgc93kyKOWhYaFJoa3M4QUk

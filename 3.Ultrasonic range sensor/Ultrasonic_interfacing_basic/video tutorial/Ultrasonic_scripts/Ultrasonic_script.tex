@@ -1,0 +1,92 @@
+\documentclass[a4paper,29.6pt]{article}
+\usepackage{graphicx}
+
+\title {Script\\Sensor Module Interfacing \\[10pt] Task: Ultrasonic Sensor Module Interfacing \\[25pt] Team members }
+\author {Chayatan \and Mukilan A \and Shanthanu Senguptha}
+
+\begin{document}
+\maketitle
+\begin{center}
+\begin{large}
+Under the guidance of\\
+\textbf{Prof. Kavi Arya\\and\\Parin Chedda}\\
+\vspace{0.5in}
+\end{large}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.32]{iitblogo.pdf}
+\end{center}
+\begin{center}
+\begin{large}
+Embedded and Real-Time Systems Laboratory \\
+Department of Computer Science and Engineering \\
+Indian Institute of Technology \\
+Bombay \\
+\end{large}
+\end{center}
+
+
+
+
+\newpage
+\section{Slide1: Introduction}
+\begin{small}
+Hello everyone, this is a video tutorial on interfacing ultrasonic sensor module on FireBird V robot.\\\\
+
+\end{small}
+
+\section{Slide2: Agenda for Discussion}
+\begin{small}
+
+We will discuss the basic working principle of ultrasonic sensor, the MB 1310 sensor module we are using and the various steps involved in the interfacing procedure such as mounting the sensor on our robot, interfacing circuitry, calibration and the C-code to interface it with ATMEGA 2560.
+
+\end{small}
+
+\section{Slide3: What is an ultrasonic sensor? }
+\begin{small}
+Ultrasonic sensors are transceiver units which use high frequency sound waves for several detection and ranging applications such as sonar, burglar alarms, etc.
+\end{small}
+
+\section{Slide4: About MB 1310}
+\begin{small}
+MB-1310 is the sensor module which we are interfacing. It operates over low power 3.3-5V range. It can detect objects from 0-765 cm and range objects from 20-765 cm. The figure shows the pin configuration.
+\begin{itemize}
+\item Pin 1 decides the type of digital output through pin 5. It is not used.
+\item Pin 2 is used to get the PWM representation of the range detected.
+\item Rx pin triggers the sensor.
+\item AN pin gives the analog voltage equivalent to the range detected with a scaling factor of $V_{cc}/1024$
+\item $V_{cc}$ and GND pins are connected to 5V and ground.
+\end{small}
+
+
+
+
+\section{Slide5: Mounting and Interfacing ultrasonic sensor}
+\begin{small}
+The figure shows the sensor bolted on a C-joint mounted over the Fire Bird V. The pin out connection will be explained in the next slide.
+\end{small}
+
+
+\section{Slide6: Servo pod connections}
+\begin{small}
+The figure shows the pin out connections given to the servo pod slot in the Fire Bird V robot PB4 is connected to Rx pin and ADC14 pin is connected to AN pin of the sensor.
+
+\end{small}
+
+\section{Slide7: Calibration}
+\begin{small}
+MB 1310 outputs analog voltage with a scaling factor of $(V{cc}/1024)/cm.$
+		 $$Supply\: Voltage = 5V$$
+		 $$Scaling\: factor= 5/1024 = 4.88mV/cm$$
+		 ATMEGA 2560 ADC resolution for the 10 bit ADC it uses $$ Resolution = Vcc/(2^n) =5/1024$$ $$= 4.88mV/ADC Step$$
+		 $$Distance\: in\: cm = ADC Steps * (4.88/4.88)$$ $$= ADC * 1$$ 
+		 $$Scaling\: Factor = 1$$
+\end{small}
+\section{Slide8: C code}
+\begin{small}
+
+Now we will see the C code to interface the Ultrasonic sensor module with FireBird V robot.
+First we have the lcd port configuration and then we have the ultrasonic trigger configuration which will be used to enable and disable the ultrasonic sensor by enabling and disabling the PB4 pin. And we have the ADC port configuration where we have used Port K to control the ADC 14 pin. Then we have the ADC initialization code. The interrupts will be disabled in the first step and the required values will be set like the reference voltage is set for 5V external and ADLAR is set to 1. Setting ADLAR to 1 will store the 16 bit data in a particular format with the two 8 bit registers. ADCSRA is then set and then the interrupts will be enabled at the end. Now coming to the conversion part. Since ADLAR = 1 we will right shift ADCL to six bits and left shift ADCH to 2 bits and OR both to get the resultant value. Then the resultant value is returned. Now if you come to the main program this will store the data. This will call for ultra() which will display the data. This will display the data in this format "Distance equal to "the distance" cm.". These are the initialization code to initialize the devices. 
+Now we will see the header file generated to use this ultrasonic interfacing for any other application. The coding part will be the same and the only change is in the main code, there will be a return function which will return the distance. So if you include ultrasonic.h in any application code and you can get the distance. For example if you call a=ultra() in any application a will store the data. This can be used for any application. Thank You.
+\end{small}
+\end{document}

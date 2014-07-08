@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{Accelerometer}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Working Principle}{8}{0}{1}
+\beamer@sectionintoc {2}{Interfacing of Accelerometer with FireBird V}{12}{0}{2}
+\beamer@subsectionintoc {2}{1}{Pin Diagram}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Pin Connections of MMA7361 Accelerometer}{14}{0}{2}
+\beamer@subsectionintoc {2}{3}{Connection Details}{16}{0}{2}
+\beamer@sectionintoc {3}{C Code}{18}{0}{3}
+\beamer@sectionintoc {4}{Applications using Accelerometer}{19}{0}{4}
